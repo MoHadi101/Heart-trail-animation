@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    /* Entfernt den Rand der Seite
+
+Höhe = ganze Bildschirmhöhe
+
+Schwarzer Hintergrund
+
+overflow: hidden verhindert, dass Animationen außerhalb sichtbar sind */
+}
+span{
+    background: url("https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-1024.png");
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   animation: animate 6s linear;
+  /* Jedes erzeugte <span> bekommt ein Herzbild als Hintergrund.
+
+Es wird absolut positioniert an der Mausposition.
+
+pointer-events: none → Maus ignoriert diese Herzen, damit du weiter frei bewegen kannst.
+
+animation: animate 6s linear; → startet die Bewegung nach oben. */
+
+}
+@keyframes animate {
+    0%{
+        transform: translate(-50%,-50%);
+        opacity: 1;
+        filter: hue-rotate(0);
+    }
+      100%{
+        transform: translate(-50%,-5000%);
+        opacity: 0;
+        filter: hue-rotate(720deg);
+    }
+
+/* ➡️ Das Herz:
+
+startet mit voller Deckkraft (sichtbar)
+
+wandert sehr weit nach oben (-5000%)
+
+verblasst langsam (opacity: 0)
+
+dreht seine Farbe (hue-rotate(720deg) = bunter Effekt) */
+}
